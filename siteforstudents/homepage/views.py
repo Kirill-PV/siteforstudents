@@ -4,11 +4,13 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 
+menu = ["О сайте", "Студентам", "Добавить лекции/учебник", "Лекции"]
+
 def index(request):
-    return render(request, 'homepage/index.html')
+    return render(request, 'homepage/index.html', {'menu': menu, 'title': 'Главная страница'})
 
 def about(request):
-    return render(request, 'homepage/about.html')
+    return render(request, 'homepage/about.html', {'menu': menu, 'title': 'О сайте'})
 
 def categories(request, cat):
     print(request.GET)
