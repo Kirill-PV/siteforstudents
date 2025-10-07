@@ -7,6 +7,9 @@ from django.shortcuts import render, redirect
 def index(request):
     return render(request, 'homepage/index.html')
 
+def about(request):
+    return render(request, 'homepage/about.html')
+
 def categories(request, cat):
     print(request.GET)
     return HttpResponse(f'<h1>Категории приложения Homepage</h1><p>{cat}</p>')
