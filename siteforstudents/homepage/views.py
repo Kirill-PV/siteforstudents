@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 
 def index(request):
-    return render(request, 'Страница приложения Homepage')
+    return render(request, 'homepage/index.html')
 
 def categories(request, cat):
     print(request.GET)
