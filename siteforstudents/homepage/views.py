@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 
-menu = ["О сайте", "Студентам", "Добавить лекции/учебник", "Лекции"]
+menu = ["О сайте", "Студентам", "Лекции и материалы", "Добавить лекцию или учебник"]
 
 def index(request):
     return render(request, 'homepage/index.html', {'menu': menu, 'title': 'Главная страница'})
