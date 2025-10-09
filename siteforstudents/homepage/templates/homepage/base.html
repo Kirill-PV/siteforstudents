@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
-    <link type="text/css" href="{% static 'homepage/css/style.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'homepage/css/styles.css' %}" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="shortcut icon" href="{% static 'homepage/images/main.ico' %}" type="image/x-icon"/>
+	<link rel="shortcut icon" href="{% static 'homepage/images/main.png' %}" type="image/x-icon"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 {% block mainmenu %}
     <div class="header">
         <ul id="mainmenu" class="mainmenu">
-        <li class="logo"><a href="#"><div class="logo"></div></a></li>
+        <li class="logo-item"><a href="#"><div class="logo-item"></div></a></li>
 {% for m in menu %}
     {% if not forloop.last %}
         <li><a href="#">{{ m.capitalize}}</a></li>
@@ -27,6 +27,21 @@
     </div>
 {% endblock mainmenu %}
 
+<table class="table-content" border=0 cellpadding="0" cellspacing="0">
+    <tr>
+<!-- Sidebar слева -->
+	<td valign="top" class="left-chapters">
+	<ul id="leftchapters">
+		<li class="selected">Все категории</li>
+		<li><a href="#">Новости интерфакса</a></li>
+		<li><a href="#">Конференции</a></li>
+		<li><a href="#">Погода</a></li>
+		</li>
+	</ul>
+</td>
+<!-- Конец Sidebar'а -->
+
+    </tr>
 {% block content %}
 {% endblock content %}
 
