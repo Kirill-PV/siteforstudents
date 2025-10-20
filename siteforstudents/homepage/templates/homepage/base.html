@@ -13,7 +13,7 @@
 {% block mainmenu %}
     <div class="header">
         <ul id="mainmenu" class="mainmenu">
-        <li class="logo-item"><a href="#"><div class="logo-item"></div></a></li>
+        <li class="logo"><a href="#"><div class="logo"></div></a></li>
 {% for m in menu %}
     {% if not forloop.last %}
         <li><a href="#">{{ m.capitalize}}</a></li>
@@ -31,7 +31,7 @@
     <tr>
 <!-- Sidebar слева -->
 	<td valign="top" class="left-chapters">
-	<ul id="leftchapters">
+	<ul id="left-chapters" >
 		<li class="selected">Все категории</li>
 		<li><a href="#">Новости интерфакса</a></li>
 		<li><a href="#">Конференции</a></li>
@@ -41,7 +41,16 @@
 </td>
 <!-- Конец Sidebar'а -->
 
+        <!-- Основной контент -->
+        <td valign="top" class="content">
+            <h1>Заголовок страницы</h1>
+            <p>Основное содержимое страницы здесь...</p>
+        </td>
     </tr>
+</table>
+
+
+
 {% block content %}
 {% endblock content %}
 
