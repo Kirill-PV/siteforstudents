@@ -5,27 +5,39 @@ from django.shortcuts import render, redirect
 # Create your views here.
 
 menu = [{'title': "О сайте", 'url_name': 'about'},
-        {'title': "Студентам", 'url_name': ''},
-        {'title': "Лекции и материалы", 'url_name': ''},
+        {'title': "Лекции и материалы", 'url_name': 'materials'},
         {'title':"Добавить лекцию или учебник", 'url_name': 'add_material'},
         {'title': "Войти", 'url_name': 'login'}
         ]
+#        {'title': "Студентам", 'url_name': 'students'},
+#
+
+
 
 def index(request):
-    return render(request, 'homepage/index.html', {'menu': menu, 'title': 'Главная страница'})
+    context = {'menu': menu,
+               'title': 'Главная страница'}
+    return render(request, 'homepage/index.html', context=context)
 
 def about(request):
     return render(request, 'homepage/about.html', {'menu': menu, 'title': 'О сайте'})
 
-def categories(request, cat):
-    print(request.GET)
-    return HttpResponse(f'<h1>Категории приложения Homepage</h1><p>{cat}</p>')
+def add_materials(request):
+    return HttpResponse('Добавление лекции')
 
-def archive(request, year):
-    if int(year) > 2020:
-        return redirect('home', permanent=True)
+def materials(request):
+    return HttpResponse('Лекции')
 
-    return HttpResponse(f'<h1>Архив по годам</h1><p>{year}</p>')
+def contact(request):
+    return HttpResponse('Обратная связь')
+
+def login(request):
+    return HttpResponse('Авторизация')
+
+def show_material(request, material_id):
+    return HttpResponse(f'Отображение материала с id = {material_id}')
+
+
 
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
