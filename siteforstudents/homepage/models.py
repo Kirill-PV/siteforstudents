@@ -8,6 +8,11 @@ class Content(models.Model):
      time_create = models.DateTimeField(auto_now_add=True)
      time_update = models.DateTimeField(auto_now=True)
      is_published = models.BooleanField(default=True)
+     cat_id = models.TextField()
 
      def __str__(self):
          return self.title
+
+class Category(models.Model):
+    id =
+    name =
